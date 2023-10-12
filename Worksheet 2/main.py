@@ -30,8 +30,21 @@ isAlternating = [postal[i] == postal[i+2] for i in range(len(postal) - 2)]
 
 print(isValid and not any(isAlternating))
 
+# alternative solution
 
+digits = []
+temp = 1
+while temp !=0:
+    digits.append(temp % 10)
+    temp = temp//10
+print(digits)
 
+check = []
+
+for j in range(0, len(digits)-2):
+    check.append(digits[j] == digits[j+2])
+
+print(check.count(True) <= 1 and 100000 <= int(postal) <= 999999)
 
 
 
